@@ -1,5 +1,18 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  // iterate over the array of numbers
+  for (let i = 0; i<array.length; i++){
+    // find the number the first number should add to to get the target (target - currentnumber)
+    let remainder = target - array[i];
+    // iterate over the remaining numbers to look for the number that should be added
+    for (let j= i+1; j<array.length; j++){
+      if(array[j] === remainder){
+        return true
+      }
+    }
+    
+  }
+  return false
 }
 
 /* 
@@ -8,6 +21,13 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  iterate over the array of numbers
+  find the number the first number should add to to get the target (target - currentnumber)
+  iterate over the remaining numbers to look for the number that should be added
+    if it exists
+      return true
+    else 
+      return false
 */
 
 /*
